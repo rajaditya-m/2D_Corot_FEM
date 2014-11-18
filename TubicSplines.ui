@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TubicSplineClass</class>
+ <widget class="QMainWindow" name="TubicSplineClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1186</width>
+    <height>778</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Tubic Splines</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="GLWidget" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>9</y>
+      <width>1171</width>
+      <height>651</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QSlider" name="horizontalSlider">
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>680</y>
+      <width>1101</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>1500</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <property name="tickPosition">
+     <enum>QSlider::TicksBelow</enum>
+    </property>
+    <property name="tickInterval">
+     <number>5</number>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="doubleSpinBox">
+    <property name="geometry">
+     <rect>
+      <x>1120</x>
+      <y>680</y>
+      <width>62</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="wrapping">
+     <bool>true</bool>
+    </property>
+    <property name="decimals">
+     <number>0</number>
+    </property>
+    <property name="maximum">
+     <double>1500.000000000000000</double>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1186</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuRender">
+    <property name="title">
+     <string>Render</string>
+    </property>
+    <addaction name="action2D"/>
+    <addaction name="action3D"/>
+    <addaction name="separator"/>
+    <addaction name="actionShow_Co_ord_Axis"/>
+    <addaction name="actionShow_Ground"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menuAnimation">
+    <property name="title">
+     <string>Animation</string>
+    </property>
+    <addaction name="actionPlay"/>
+    <addaction name="actionPause"/>
+    <addaction name="actionReset"/>
+   </widget>
+   <widget class="QMenu" name="menuInteract">
+    <property name="title">
+     <string>Interact</string>
+    </property>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuView"/>
+   <addaction name="menuRender"/>
+   <addaction name="menuInteract"/>
+   <addaction name="menuAnimation"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionShow_Body">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Show Body</string>
+   </property>
+  </action>
+  <action name="actionShow_Clothing">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Show Clothing</string>
+   </property>
+  </action>
+  <action name="actionShaded_Cloth">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Shaded Cloth</string>
+   </property>
+  </action>
+  <action name="actionWireframe_Cloth">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Wireframe Cloth</string>
+   </property>
+  </action>
+  <action name="actionShaded_Body">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Shaded Body</string>
+   </property>
+  </action>
+  <action name="actionWireframe_Body">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Wireframe Body</string>
+   </property>
+  </action>
+  <action name="actionShow_Co_ord_Axis">
+   <property name="text">
+    <string>Show Co-ord Axis</string>
+   </property>
+  </action>
+  <action name="actionShow_Ground">
+   <property name="text">
+    <string>Show Ground</string>
+   </property>
+  </action>
+  <action name="actionVelocity">
+   <property name="text">
+    <string>Velocity</string>
+   </property>
+  </action>
+  <action name="actionTotal_Force">
+   <property name="text">
+    <string>Total Force</string>
+   </property>
+  </action>
+  <action name="actionStretch_Force">
+   <property name="text">
+    <string>Stretch Force</string>
+   </property>
+  </action>
+  <action name="actionDamping_Force">
+   <property name="text">
+    <string>Damping Force</string>
+   </property>
+  </action>
+  <action name="actionBending_Force">
+   <property name="text">
+    <string>Bending Force</string>
+   </property>
+  </action>
+  <action name="actionGravity_Forrce">
+   <property name="text">
+    <string>Gravity Force</string>
+   </property>
+  </action>
+  <action name="actionAcceleration">
+   <property name="text">
+    <string>Acceleration</string>
+   </property>
+  </action>
+  <action name="actionPlay">
+   <property name="text">
+    <string>Play</string>
+   </property>
+  </action>
+  <action name="actionPause">
+   <property name="text">
+    <string>Pause</string>
+   </property>
+  </action>
+  <action name="actionStop">
+   <property name="text">
+    <string>Stop</string>
+   </property>
+  </action>
+  <action name="actionHeatmap_Velocity">
+   <property name="text">
+    <string>Heatmap - Velocity</string>
+   </property>
+  </action>
+  <action name="actionHeatmap_Acceleration">
+   <property name="text">
+    <string>Heatmap - Acceleration</string>
+   </property>
+  </action>
+  <action name="actionHeatmap_Shear_Force">
+   <property name="text">
+    <string>Heatmap - Shear Force</string>
+   </property>
+  </action>
+  <action name="actionHeatmap_Bending_Force">
+   <property name="text">
+    <string>Heatmap - Bending Force</string>
+   </property>
+  </action>
+  <action name="actionHeatmap_Damping_Force">
+   <property name="text">
+    <string>Heatmap - Damping Force</string>
+   </property>
+  </action>
+  <action name="actionReset">
+   <property name="text">
+    <string>Reset </string>
+   </property>
+  </action>
+  <action name="actionTop_Perturbation">
+   <property name="text">
+    <string>Top Perturbation</string>
+   </property>
+  </action>
+  <action name="actionBottom_Perturbation">
+   <property name="text">
+    <string>Bottom Perturbation</string>
+   </property>
+  </action>
+  <action name="actionLeft_Perturbation">
+   <property name="text">
+    <string>Left Perturbation</string>
+   </property>
+  </action>
+  <action name="actionRight_Perturbation">
+   <property name="text">
+    <string>Right Perturbation</string>
+   </property>
+  </action>
+  <action name="actionShow_Springs">
+   <property name="text">
+    <string>Show Springs</string>
+   </property>
+  </action>
+  <action name="actionShow_Particles">
+   <property name="text">
+    <string>Show Particles</string>
+   </property>
+  </action>
+  <action name="action2D">
+   <property name="text">
+    <string>2D</string>
+   </property>
+  </action>
+  <action name="action3D">
+   <property name="text">
+    <string>3D</string>
+   </property>
+  </action>
+  <action name="actionSingle_Point">
+   <property name="text">
+    <string>Single Point</string>
+   </property>
+  </action>
+  <action name="actionWeighted_Area">
+   <property name="text">
+    <string>Weighted Area</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>GLWidget</class>
+   <extends>QWidget</extends>
+   <header>glwidget.h</header>
+   <container>1</container>
+   <slots>
+    <signal>xRotationChanged(int)</signal>
+    <signal>yRotationChanged(int)</signal>
+    <signal>frameNumberUpdated(double)</signal>
+    <signal>frameNumberUpdated(int)</signal>
+    <signal>animFrameNumberUpdated(int)</signal>
+    <slot>setXRotation(int)</slot>
+    <slot>setYRotation(int)</slot>
+    <slot>setRenderingFrameNumber(double)</slot>
+    <slot>setRenderingFrameNumber(int)</slot>
+    <slot>startAnimation(bool)</slot>
+    <slot>startAnimation()</slot>
+    <slot>pauseAnimation()</slot>
+    <slot>stopAnimation()</slot>
+    <slot>setRenderingMode()</slot>
+    <slot>setShadingRender(bool)</slot>
+    <slot>setWireFrameRender(bool)</slot>
+    <slot>setHeatMapRender(bool)</slot>
+    <slot>setPerturbValue(int)</slot>
+    <slot>slot2()</slot>
+   </slots>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="TubicSplines.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>doubleSpinBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>widget</receiver>
+   <slot>setRenderingFrameNumber(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1181</x>
+     <y>721</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1139</x>
+     <y>578</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>widget</receiver>
+   <slot>setRenderingFrameNumber(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1050</x>
+     <y>722</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1046</x>
+     <y>670</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>widget</sender>
+   <signal>frameNumberUpdated(double)</signal>
+   <receiver>doubleSpinBox</receiver>
+   <slot>setValue(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>779</x>
+     <y>636</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1181</x>
+     <y>721</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>widget</sender>
+   <signal>frameNumberUpdated(int)</signal>
+   <receiver>horizontalSlider</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>677</x>
+     <y>635</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>711</x>
+     <y>722</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>widget</sender>
+   <signal>animFrameNumberUpdated(int)</signal>
+   <receiver>horizontalSlider</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>511</x>
+     <y>468</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>533</x>
+     <y>722</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
